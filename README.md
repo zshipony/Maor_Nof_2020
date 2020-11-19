@@ -27,6 +27,8 @@ cpm = edgeR::cpm(as.matrix(counts[,7:29]),
 
 RNA-seq DEseq2 pairwise comparison file :
 
+- RNA Clusters:
+    - files/RNA_clusters/RNA_kmeans_6K.tsv - Values and clusters for Fig2 Kmeans
 - DEseq2:
     - files/diffexp/GFP_none_day1.deseq.csv - GFP vs Ctrl Day 1
     - files/diffexp/GFP_none_day2.deseq.csv - GFP vs Ctrl Day 2
