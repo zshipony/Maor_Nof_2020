@@ -46,3 +46,26 @@ RNA-seq DEseq2 pairwise comparison file :
     - files/diffexp/ctrl_tdp_day1.deseq.csv - Ctrl vs TDP Day 1
     - files/diffexp/ctrl_tdp_day2.deseq.csv - Ctrl vs TDP Day 2
     - files/diffexp/ctrl_tdp_day3.deseq.csv - Ctrl vs TDP Day 3
+
+To draw MA plot
+```R
+library(tidyverse)
+library(ggpubr)
+draw_ma <- function(res,img_name,ttl,gene_names,gene_n,fc_out) {
+    pdf(img_name,20,20)
+    p <- ggmaplot(res, main = ttl,
+        fdr = 0.05, fc = fc_out, size = 2,
+        palette = c("#1465AC", "#B31B21", "darkgray"),
+        genenames = gene_names,
+        legend = "top", top = gene_n,
+        font.label = c("bold", 38),
+        font.legend = "bold",
+        font.main = "bold",
+      label.rectangle = FALSE,
+        ggtheme = ggplot2::theme_minimal())
+    print(p)
+    dev.off()
+}
+de_file = read_csv("DESEQ_FILE")
+draw_ma(de_file,"IMAGE_OUT","Figure Title",GENE_NAMES,NUM_GENES_TO_DISPLAY,FoldChange)
+```
