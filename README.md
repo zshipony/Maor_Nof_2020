@@ -19,7 +19,8 @@ library(edgeR)
 #Get CPM
 sizeFactorsTable = read.table("sizeFactors/All.sizes", col.names=c("dataset", "size"))
 
-cpm = edgeR::cpm(as.matrix(counts[,7:29]),          lib.size=sizeFactorsTable$size,log=T,prior.count=5)
+cpm = edgeR::cpm(as.matrix(counts[,7:29]),
+    lib.size=sizeFactorsTable$size,log=T,prior.count=5)
 ```
 
 #### RNA-seq
