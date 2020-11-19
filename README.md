@@ -3,7 +3,7 @@
 [TOC]
 
 #### ATAC-seq
-
+ATAC-seq data at WashU genome browser : http://epigenomegateway.wustl.edu/browser/?genome=mm9&session=ZiyQfvwMSC&statusId=990979562
 
 - Peaks:
     - files/peaks/All_peaks_fixed_len.bed - 321788 peaks, fixed length
